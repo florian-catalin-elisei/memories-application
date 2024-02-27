@@ -1,0 +1,17 @@
+.App-appbar {
+  border-radius: 15px;
+  margin: 15px 0;
+  padding: 15px;
+}
+
+.App-appbar-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .App-grid {
+    flex-direction: column-reverse !important;
+  }
+}
