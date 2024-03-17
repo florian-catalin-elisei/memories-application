@@ -1,0 +1,18 @@
+[
+  {
+    "id": "author",
+    "label": "Author"
+  },
+  {
+    "id": "title",
+    "label": "Title"
+  },
+  {
+    "id": "message",
+    "label": "Message"
+  },
+  {
+    "id": "tags",
+    "label": "Tags"
+  }
+]
