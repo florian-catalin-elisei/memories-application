@@ -23,7 +23,7 @@ I. Frontend
 1. Navigate to the client directory:
 
 ```bash
-  cd client
+  cd memories-application-frontend
 ```
 
 2. Install the dependencies:
@@ -43,7 +43,7 @@ II. Backend
 1. Navigate to the server directory:
 
 ```bash
-  cd server
+  cd memories-application-backend
 ```
 
 2. Install the dependencies:
