@@ -1,4 +1,5 @@
-import { router } from "./routes/posts.js";
+import postsRoutes from "./routes/posts.js";
+import usersRoutes from "./routes/users.js";
 import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
@@ -8,7 +9,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
-app.use("/posts", router);
+app.use("/posts", postsRoutes);
+app.use("/users", usersRoutes);
 
 const port = process.env.PORT || 5000;
 const uri = process.env.URI;

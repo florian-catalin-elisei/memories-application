@@ -1,4 +1,4 @@
-import { AppBar, Box, Typography } from "@mui/material";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledAppBar = styled(AppBar)(() => ({
@@ -11,11 +11,19 @@ export const StyledAppBar = styled(AppBar)(() => ({
 export const StyledBox = styled(Box)(() => ({
   alignItems: "center",
   display: "flex",
-  margin: "0 auto",
+  textDecoration: "none",
+}));
+
+export const StyledToolbar = styled(Toolbar)(() => ({
+  alignItems: "center",
+  display: "flex",
+  justifyContent: "space-evenly",
 }));
 
 export const StyledTypography = styled(Typography)(() => ({
+  color: "white",
   fontFamily: "Poppins, sans-serif",
+  margin: "0 10px",
 }));
 
 export const Image = styled(Box)(() => ({

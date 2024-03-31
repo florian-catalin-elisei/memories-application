@@ -1,42 +1,44 @@
-import { Container, Grow, useMediaQuery } from "@mui/material";
-import { Form, NavBar, Posts } from "./components";
-import { useState } from "react";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Auth, Home, NavBar } from "./components";
+import { Box, Container } from "@mui/material";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 export const App = () => {
-  const [id, setId] = useState(null);
-  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+
+    if (storedUserData) setUserData(storedUserData);
+  }, []);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Box>
+          <NavBar userData={userData} />
+
+          <Home userData={userData} />
+        </Box>
+      ),
+    },
+    {
+      path: "/auth",
+      element: (
+        <Box>
+          <NavBar />
+
+          <Auth setUserData={setUserData} />
+        </Box>
+      ),
+    },
+  ]);
 
   return (
     <Container maxWidth="lg">
-      <NavBar />
-
-      {isSmallScreen ? (
-        <Grow in>
-          <Grid container spacing={2}>
-            <Grid xs={12} md={8}>
-              <Form id={id} setId={setId} />
-            </Grid>
-
-            <Grid xs={12} md={4}>
-              <Posts id={id} setId={setId} />
-            </Grid>
-          </Grid>
-        </Grow>
-      ) : (
-        <Grow in>
-          <Grid container spacing={2}>
-            <Grid xs={12} md={8}>
-              <Posts id={id} setId={setId} />
-            </Grid>
-
-            <Grid xs={12} md={4}>
-              <Form id={id} setId={setId} />
-            </Grid>
-          </Grid>
-        </Grow>
-      )}
+      <RouterProvider router={router} />
     </Container>
   );
 };
