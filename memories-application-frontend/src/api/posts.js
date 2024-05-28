@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/posts";
+const url = "https://memories-application-backend.vercel.app/";
 
 export const createPost = (post) => axios.post(url, post);
 export const deletePost = (id) => axios.delete(`${url}/${id}`);
