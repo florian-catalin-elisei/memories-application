@@ -7,7 +7,11 @@ import "dotenv/config.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://memories-application-frontend.vercel.app/",
+  })
+);
 app.use(express.json({ limit: "10mb" }));
 app.use("/posts", postsRoutes);
 app.use("/users", usersRoutes);
