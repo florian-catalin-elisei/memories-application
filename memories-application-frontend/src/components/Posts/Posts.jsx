@@ -30,7 +30,7 @@ export const Posts = ({ id, setId }) => {
 
   return (
     <Grid container spacing={2}>
-      {posts.map((post, i) => (
+      {posts?.map((post, i) => (
         <Grid xs={12} md={6} key={i}>
           <Post
             handleDeletePost={handleDeletePost}
