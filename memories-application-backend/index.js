@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://memories-application-frontend.vercel.app/",
+    origin: "https://memories-application-frontend.vercel.app",
   })
 );
 app.use(express.json({ limit: "10mb" }));
